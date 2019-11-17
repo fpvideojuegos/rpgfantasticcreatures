@@ -8,3 +8,4 @@
 <p>Lorena Moyano Montes</p>
 <p>David Pérez Pardo</p>
 <p>Mercedes Perea Ropero</p>
+<p>Cintia García Ruiz</p>
