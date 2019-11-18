@@ -22,6 +22,11 @@ export default class Preload extends Phaser.Scene {
         this.progress.fillRect((this.cameras.main.width / 4), (this.cameras.main.height /2) - 16, (this.cameras.main.width / 2) * value, 16);
     }, this);
 
+    // now load images button
+		// sprites, note: see free sprite atlas creation tool here https://www.leshylabs.com/apps/sstool/
+		this.load.atlas('sprites', 'asset/buttonPlay.png', 'asset/sprites.json');
+
+
     //cleanup our graphics on complete
     this.load.on('complete', function () {
         this.progress.destroy();
