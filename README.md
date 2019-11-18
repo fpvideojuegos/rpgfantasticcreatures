@@ -4,7 +4,7 @@
 <h2>Curso 2019/20</h2>
 <br>
 <h1>Colaboradores</H1>
-<p>Rosa Mª Domínguez Barrientos</p>
+<p>Rosa María Domínguez Barrientos</p>
 <p>Lorena Moyano Montes</p>
 <p>David Pérez Pardo</p>
 <p>Mercedes Perea Ropero</p>
