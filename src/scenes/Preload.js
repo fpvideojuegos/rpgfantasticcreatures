@@ -37,7 +37,7 @@ export default class Preload extends Phaser.Scene {
     Phaser.GameObjects.BitmapText.ParseFromAtlas(this, 'minecraft', 'atlas', 'minecraft', 'minecraftXML');  //assemble the bitmap font from the atlas
     this.initRegistry(); //initialize the starting registry values.
     this.scene.launch('HUD'); //launch HUD
-    this.scene.start('Level');
+    this.scene.start('Menu');
   }
 
   initRegistry() 
