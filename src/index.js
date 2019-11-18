@@ -26,5 +26,9 @@ const config = {
     GameOver
     ]
 };
+localStorage.setItem('coins',Game.scene.coins);
+localStorage.setItem('health', Game.scene.health);
+localStorage.setItem('magic' , Game.scene.magic);
+localStorage.setItem('level', Game.scene.Level );
 
 const game = new Phaser.Game(config);

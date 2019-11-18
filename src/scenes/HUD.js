@@ -29,12 +29,17 @@ export default class HUD extends Phaser.Scene {
 
   updateCoins() 
   {
+
     this.coins.setText(`Coins: ${this.registry.get('coins_current')} / ${this.registry.get('coins_max')}`);
+    Game.scene.level = parseInt(localStorage.getItem('Level')) || 0;
+    Game.scene.coins = parseInt(localStorage.getItem('coins')) || 0;
   }
 
   updateHealth() 
   {
+    
     this.health.setText(`Health: ${this.registry.get('health_current')} / ${this.registry.get('health_max')}`);
+    Game.scene.health = parseInt(localStorage.getItem('health')) || 0;
     if (this.registry.get('health_current') <= 1 && !this.alarmed) {
       this.alarmed = true;
       this.healthAlarm.play();
@@ -47,6 +52,7 @@ export default class HUD extends Phaser.Scene {
   updateMagic() 
   {
     this.magic.setText(`Magic: ${this.registry.get('magic_current')} / ${this.registry.get('magic_max')}`);
+    Game.scene.magic = parseInt(localStorage.getItem('magic')) || 0;
   }
 
   gameOver()
