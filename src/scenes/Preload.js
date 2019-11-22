@@ -21,18 +21,16 @@ export default class Preload extends Phaser.Scene {
         this.progress.fillStyle(0xfff6d3, 1);
         this.progress.fillRect((this.cameras.main.width / 4), (this.cameras.main.height /2) - 16, (this.cameras.main.width / 2) * value, 16);
     }, this);
-
-    // now load images button
-		// sprites, note: see free sprite atlas creation tool here https://www.leshylabs.com/apps/sstool/
-		this.load.atlas('sprites', 'asset/buttonPlay.png', 'asset/sprites.json');
-
-
+    
     //cleanup our graphics on complete
     this.load.on('complete', function () {
         this.progress.destroy();
         this.fullBar.destroy();
     }, this);
 
+    // now load images button
+		// sprites, note: see free sprite atlas creation tool here https://www.leshylabs.com/apps/sstool/
+    this.load.atlas('sprites', 'assets/sprites.png', 'assets/sprites.json');
     //start loading
     this.load.pack('Preload', 'assets/pack.json', 'Preload');
   }
@@ -41,7 +39,6 @@ export default class Preload extends Phaser.Scene {
   {
     Phaser.GameObjects.BitmapText.ParseFromAtlas(this, 'minecraft', 'atlas', 'minecraft', 'minecraftXML');  //assemble the bitmap font from the atlas
     this.initRegistry(); //initialize the starting registry values.
-    this.scene.launch('HUD'); //launch HUD
     this.scene.start('Menu');
   }
 

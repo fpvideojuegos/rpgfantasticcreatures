@@ -20,6 +20,7 @@ export default class Level extends Phaser.Scene {
 
   create() 
   {
+    document.body.style.cursor = 'none';    //remove cursor so we can replace it with our crosshair
     this.cameras.main.setBackgroundColor(0x2a0503); 
     //point the variable at the registry which is assigned either at the Preload scene or just prior to level restart
     let load = this.registry.get('load');
