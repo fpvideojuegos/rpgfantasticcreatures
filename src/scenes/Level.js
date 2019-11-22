@@ -9,6 +9,8 @@ import Meat from '../sprites/meat.js';
 import Potion from '../sprites/potion.js';
 import Jug from '../sprites/jug.js';
 import Heart from '../sprites/heart.js';
+// add friend
+import Friend from '../sprites/friend.js';
 
 export default class Level extends Phaser.Scene {
   constructor() 
@@ -49,6 +51,16 @@ export default class Level extends Phaser.Scene {
      maxSize: 50,
      runChildUpdate: true 
    });
+
+
+   this.friends = this.add.group();
+   
+  //  this.enemyAttack = this.add.group({
+  //   classType: DarkFireball,
+  //   maxSize: 50,
+  //   runChildUpdate: true 
+  // });
+
     this.pickups = this.add.group();
     this.convertObjects();
 
@@ -61,6 +73,17 @@ export default class Level extends Phaser.Scene {
       x: spawn.x, 
       y: spawn.y,
     });
+
+    // //create friend istance
+    // this.friend= new Friend({
+    //   scene: this,
+    //    x: spawn.x+10, 
+    //    y: spawn.y -8,
+    //   // allowGravity = false;
+
+    // });
+
+    
     this.cameras.main.startFollow(this.player);
     this.playerAttack = this.add.group({
       classType: Fireball,
@@ -70,7 +93,9 @@ export default class Level extends Phaser.Scene {
 
     //tell the physics system to collide player, appropriate tiles, and other objects based on group, run callbacks when appropriate
     this.physics.add.collider(this.player, this.layer);
+    this.physics.add.collider(this.player, this.friends, this.friendTex);
     this.physics.add.collider(this.player, this.enemies, this.playerEnemy);
+    this.physics.add.collider(this.player, this.fiends);
     this.physics.add.collider(this.enemies, this.layer);
     this.physics.add.collider(this.enemies, this.enemies);
     this.physics.add.collider(this.playerAttack, this.layer, this.fireballWall);  //collide callback for fireball hitting wall
@@ -128,6 +153,8 @@ export default class Level extends Phaser.Scene {
     let enemyNum = 1; //initialize our enemy numbering used to check if the enemy has been killed
     let demonNum = 1; //initialize our demon numbering used to check if the demon has been killed
     let slimeNum = 1; //initialize our slime numbering used to check if the slime has been killed
+    let FriendNum = 1;  //initialize our friend numbering used to check if the fiend has been touch
+
     let regName
     objects.objects.forEach(
       (object) => {
@@ -258,6 +285,21 @@ export default class Level extends Phaser.Scene {
           }
           slimeNum += 1;
         }
+        if (object.type === 'friend') {
+          regName = `${level}_Friend_${FriendNum}`;
+          
+            let friend = new Friend({
+              scene: this,
+              x: object.x + 8, 
+              y: object.y - 8,
+              number: potNum
+            });
+            this.friends.add(friend);
+            this.registry.set(regName, 'active');
+            
+          
+         }
+         FriendNum+= 1;
       });
 }
 
@@ -294,6 +336,11 @@ fireballFireball(fireball1, fireball2)
     fireball1.fireballCollide();
     fireball2.fireballCollide();
   }
+}
+
+// TEXT FRIEND
+friendTex(player, friend){
+  console.log('hola amigo')
 }
 
 newGame() 
