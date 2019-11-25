@@ -30,15 +30,15 @@ export default class HUD extends Phaser.Scene {
   updateCoins() 
   {
 
-    this.coins.setText(`Coins: ${this.registry.get('coins_current')} / ${this.registry.get('coins_max')}`);
+    //this.coins.setText(`Coins: ${this.registry.get('coins_current')} / ${this.registry.get('coins_max')}`);
     this.coins = localStorage.setItem('coins', `${this.registry.get('coins_current')}`);
   }
 
   updateHealth() 
   {
     
-    this.health.setText(`Health: ${this.registry.get('health_current')} / ${this.registry.get('health_max')}`);
-    Game.scene.health = parseInt(localStorage.setItem('health')) || 0;
+    //this.health.setText(`Health: ${this.registry.get('health_current')} / ${this.registry.get('health_max')}`);
+    this.health = localStorage.setItem('health',`${this.registry.get('health_current')}`);
     if (this.registry.get('health_current') <= 1 && !this.alarmed) {
       this.alarmed = true;
       this.healthAlarm.play();
@@ -50,8 +50,8 @@ export default class HUD extends Phaser.Scene {
 
   updateMagic() 
   {
-    this.magic.setText(`Magic: ${this.registry.get('magic_current')} / ${this.registry.get('magic_max')}`);
-    Game.scene.magic = parseInt(localStorage.setItem('magic')) || 0;
+    //this.magic.setText(`Magic: ${this.registry.get('magic_current')} / ${this.registry.get('magic_max')}`);
+    this.magic = localStorage.setItem('magic', `${this.registry.get('magic_current')}`);
   }
 
   gameOver()
