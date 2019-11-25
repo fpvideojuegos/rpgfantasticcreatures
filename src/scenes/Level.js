@@ -113,6 +113,9 @@ export default class Level extends Phaser.Scene {
         this.time.addEvent({ delay: 1000, callback: () => {this.end('win');}, callbackScope: this });
       }
     }
+
+    
+
   }
 
   convertObjects() 

@@ -18,7 +18,7 @@ export default class GameOver extends Phaser.Scene {
       this.overText = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2 - 64, 'atlas', 'win');
       this.music = this.sound.add(`winMusic`);
     } else if (this.condition === 'lose') {
-      this.overText = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2 - 64, 'atlas', 'gameOver');
+      this.overText = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2 - 64, 'atlas', localStorage.getItem('highscore'));
       this.music = this.sound.add(`overMusic`);
     }
     this.text = this.add.bitmapText(this.cameras.main.width / 2, this.cameras.main.height / 2 + 64, 'minecraft', 'Press ENTER to Continue');

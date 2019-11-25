@@ -57,6 +57,7 @@ export default class HUD extends Phaser.Scene {
 
   gameOver()
   {
+    localStorage.setItem('highscore',parseInt(Game.scene.coins));
     this.healthAlarm.stop();
     this.health.destroy();
     this.magic.destroy();
