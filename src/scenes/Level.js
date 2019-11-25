@@ -9,6 +9,7 @@ import Meat from '../sprites/meat.js';
 import Potion from '../sprites/potion.js';
 import Jug from '../sprites/jug.js';
 import Heart from '../sprites/heart.js';
+import Wise from '../sprites/wise.js';
 
 export default class Level extends Phaser.Scene {
   constructor() 
@@ -49,6 +50,9 @@ export default class Level extends Phaser.Scene {
      maxSize: 50,
      runChildUpdate: true 
    });
+
+   this.wises = this.add.group();
+
     this.pickups = this.add.group();
     this.convertObjects();
 
@@ -71,13 +75,16 @@ export default class Level extends Phaser.Scene {
     //tell the physics system to collide player, appropriate tiles, and other objects based on group, run callbacks when appropriate
     this.physics.add.collider(this.player, this.layer);
     this.physics.add.collider(this.player, this.enemies, this.playerEnemy);
+    this.physics.add.collider(this.player, this.wises, this.wiseText);
     this.physics.add.collider(this.enemies, this.layer);
+    this.physics.add.collider(this.player, this.wise);
     this.physics.add.collider(this.enemies, this.enemies);
     this.physics.add.collider(this.playerAttack, this.layer, this.fireballWall);  //collide callback for fireball hitting wall
     this.physics.add.collider(this.enemyAttack, this.layer, this.fireballWall);  //collide callback for fireball hitting wall
     this.physics.add.collider(this.playerAttack, this.enemies, this.fireballEnemy); //collide callback for fireball hitting enemy
     this.physics.add.collider(this.playerAttack, this.enemyAttack, this.fireballFireball); //collide callback for fireball hitting darkFireball
     this.physics.add.collider(this.player, this.enemyAttack, this.fireballPlayer); //collide callback for fireball hitting player
+    
 
     if (this.registry.get('newGame') === true) {
       this.newGame();
@@ -128,6 +135,7 @@ export default class Level extends Phaser.Scene {
     let enemyNum = 1; //initialize our enemy numbering used to check if the enemy has been killed
     let demonNum = 1; //initialize our demon numbering used to check if the demon has been killed
     let slimeNum = 1; //initialize our slime numbering used to check if the slime has been killed
+    let wiseNum = 1;
     let regName
     objects.objects.forEach(
       (object) => {
@@ -258,11 +266,30 @@ export default class Level extends Phaser.Scene {
           }
           slimeNum += 1;
         }
+        if (object.type === 'wise') {
+          //check the registry to see if the coin has already been picked. If not create the coin in the level and register it with the game
+          regName = `${level}_wise_${wiseNum}`;
+          if (this.registry.get(regName) !== 'picked') {
+            let wise = new Wise({
+              scene: this,
+              x: object.x + 8, 
+              y: object.y - 8,
+              number: wiseNum
+            });
+            this.wises.add(wise);
+            this.registry.set(regName, 'active');
+          }
+        }
       });
 }
 
 playerEnemy(player, enemy){
   if (enemy.alive){
+    player.damage(enemy.attack);
+  }
+}
+playerWise(player, wise){
+  if (wise.alive){
     player.damage(enemy.attack);
   }
 }
@@ -294,6 +321,11 @@ fireballFireball(fireball1, fireball2)
     fireball1.fireballCollide();
     fireball2.fireballCollide();
   }
+}
+
+wiseText(wise, player)
+{
+console.log('Estoy akiiiii,dime el acertijo!!')
 }
 
 newGame() 
