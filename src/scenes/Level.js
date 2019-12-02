@@ -11,6 +11,7 @@ import Jug from '../sprites/jug.js';
 import Heart from '../sprites/heart.js';
 // add friend
 import Friend from '../sprites/friend.js';
+let mylevel;
 
 export default class Level extends Phaser.Scene {
   constructor() 
@@ -20,13 +21,15 @@ export default class Level extends Phaser.Scene {
     });
   }
 
+  
+
   create() 
   {
     this.cameras.main.setBackgroundColor(0x2a0503); 
     //point the variable at the registry which is assigned either at the Preload scene or just prior to level restart
     let load = this.registry.get('load');
-    console.log(load);
- 
+    console.log( " es este mi nivel???"+load);
+    mylevel=load;
     //load music based on registry value, loop, and play
     this.music = this.sound.add(`${load}Music`);
     this.music.setLoop(true);
@@ -95,7 +98,7 @@ export default class Level extends Phaser.Scene {
     this.physics.add.collider(this.player, this.layer);
     this.physics.add.collider(this.player, this.friends, this.friendTex);
     this.physics.add.collider(this.player, this.enemies, this.playerEnemy);
-    this.physics.add.collider(this.player, this.fiends);
+    this.physics.add.collider(this.player, this.friends);
     this.physics.add.collider(this.enemies, this.layer);
     this.physics.add.collider(this.enemies, this.enemies);
     this.physics.add.collider(this.playerAttack, this.layer, this.fireballWall);  //collide callback for fireball hitting wall
@@ -290,6 +293,7 @@ export default class Level extends Phaser.Scene {
           
             let friend = new Friend({
               scene: this,
+              text: "hoolaaaaaaa",
               x: object.x + 8, 
               y: object.y - 8,
               number: potNum
@@ -340,8 +344,31 @@ fireballFireball(fireball1, fireball2)
 
 // TEXT FRIEND
 friendTex(player, friend){
-  console.log('hola amigo')
+  if (friend.textbox===false){
+  
+    if(mylevel==="Level1"){
+      console.log(friend.text = "Este nivel 1 esta lleno de maravillas increibles que seguro disfrutaras");
+    }else if(mylevel==="Level2"){
+      console.log(friend.text = "Ten cuidado con los enemigos del nivel 2 son más fuertes d elo que te esperas");
+    }else if(mylevel==="Level3"){
+      console.log(friend.text = "Estamos en el nivel 3 enhorabuena! ");
+    }else if(mylevel==="Level4"){
+      console.log(friend.text = "YEah !! hemos llegado al nivel 4!!");
+    }else if(mylevel==="Level5"){
+      console.log(friend.text = "NIvel 5 el más complicado de todos, suerte!");
+    }
+
+    friend.friendTex();
+    friend.textbox=true;
+  }
 }
+
+
+// playerEnemy(player, enemy){
+//   if (enemy.alive){
+//     player.damage(enemy.attack);
+//   }
+// }
 
 newGame() 
 {
