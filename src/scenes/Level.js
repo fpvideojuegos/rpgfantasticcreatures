@@ -349,7 +349,7 @@ friendTex(player, friend){
     if(mylevel==="Level1"){
       console.log(friend.text = "Este nivel 1 esta lleno de maravillas increibles que seguro disfrutaras");
     }else if(mylevel==="Level2"){
-      console.log(friend.text = "Ten cuidado con los enemigos del nivel 2 son más fuertes d elo que te esperas");
+      console.log(friend.text = "Ten cuidado con los enemigos del nivel 2 son más fuertes de lo que te esperas");
     }else if(mylevel==="Level3"){
       console.log(friend.text = "Estamos en el nivel 3 enhorabuena! ");
     }else if(mylevel==="Level4"){
