@@ -3,8 +3,8 @@
         {
             "filename": "play",
             "frame": {
-                "x": 9,
-                "y": 11,
+                "x": 20,
+                "y": 47,
                 "w": 81,
                 "h": 64
             },
@@ -24,8 +24,8 @@
         {
             "filename": "play1",
             "frame": {
-                "x": 98,
-                "y": 12,
+                "x": 109,
+                "y": 48,
                 "w": 82,
                 "h": 63
             },
@@ -45,8 +45,8 @@
         {
             "filename": "play2",
             "frame": {
-                "x": 192,
-                "y": 12,
+                "x": 203,
+                "y": 48,
                 "w": 82,
                 "h": 64
             },
@@ -66,29 +66,29 @@
         {
             "filename": "titulo",
             "frame": {
-                "x": 9,
-                "y": 102,
-                "w": 383,
-                "h": 39
+                "x": 11,
+                "y": 137,
+                "w": 580,
+                "h": 41
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 383,
-                "h": 39
+                "w": 580,
+                "h": 41
             },
             "sourceSize": {
-                "w": 383,
-                "h": 39
+                "w": 580,
+                "h": 41
             }
         },
         {
             "filename": "core",
             "frame": {
-                "x": 1,
-                "y": 164,
+                "x": 12,
+                "y": 200,
                 "w": 166,
                 "h": 66
             },
@@ -108,8 +108,8 @@
         {
             "filename": "credit",
             "frame": {
-                "x": 7,
-                "y": 247,
+                "x": 18,
+                "y": 283,
                 "w": 166,
                 "h": 66
             },
@@ -132,7 +132,7 @@
         "version": "Leshy SpriteSheet Tool v0.8.4",
         "image": "sprites.png",
         "size": {
-            "w": 400,
+            "w": 600,
             "h": 400
         },
         "scale": 1

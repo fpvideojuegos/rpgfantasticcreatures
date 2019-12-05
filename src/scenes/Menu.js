@@ -12,21 +12,27 @@ export default class Menu extends Phaser.Scene {
 
     create(){
     // add logo
-        var logo = this.add.sprite(300, 100, 'sprites', 'titulo');
+        this.cameras.main.setBackgroundColor(0xf6b349);
+        var logo = this.add.sprite(315, 100, 'sprites', 'titulo');
+        this.btnscore = this.addButton(150, 250, 'sprites', this.clickScore, this, 'core','core','core','core');
+        this.btncredits = this.addButton(460, 250, 'sprites', this.clickCredits, this, 'credit', 'credit','credit',
+        'credit', 'credit','credit');
+        this.btnstart = this.addButton(310, 250, 'sprites', this.clickStart, this, 'play', 'play1','play2',
+        'play', 'play1','play2');
 
-       
-        var buttonStart = this.add.sprite(150, 250,'sprites','core').setInteractive()
-        .on('pointerdown', () => this.clickStart() );
-        var buttonStart = this.add.sprite(310, 250,'sprites','play').setInteractive()
-        .on('pointerdown', () => this.clickStart() );
-        var buttonStart = this.add.sprite(460, 250,'sprites','credit').setInteractive()
-        .on('pointerdown', () => this.clickStart() );
     }
 	
 	clickStart(){
-        this.scene.launch('HUD'); //launch HUD
-        this.scene.start('Level');
+      this.scene.launch('HUD'); //launch HUD
+      this.scene.start('Level');
+  }
 
-    }
+  clickScore(){
+      this.scene.start('Score');
+  }
+
+  clickCredits(){
+      this.scene.start('Credits');
+  }
 
 };
