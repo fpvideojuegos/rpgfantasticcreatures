@@ -23,6 +23,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
     //sync crosshair position with pointer
     this.scene.input.on('pointermove', function (pointer) {
       let mouse = pointer
+      console.log
       this.scene.crosshair.setPosition(mouse.x + this.scene.cameras.main.scrollX, mouse.y + this.scene.cameras.main.scrollY);
     }, this);
   

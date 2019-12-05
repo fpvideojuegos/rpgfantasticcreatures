@@ -10,6 +10,7 @@ import Potion from '../sprites/potion.js';
 import Jug from '../sprites/jug.js';
 import Heart from '../sprites/heart.js';
 import Wise from '../sprites/wise.js';
+let levels;
 
 export default class Level extends Phaser.Scene {
   constructor() 
@@ -24,7 +25,9 @@ export default class Level extends Phaser.Scene {
     this.cameras.main.setBackgroundColor(0x2a0503); 
     //point the variable at the registry which is assigned either at the Preload scene or just prior to level restart
     let load = this.registry.get('load');
+    levels= load;
     console.log(load);
+    console.log( " es este mi nivel???"+load);
  
     //load music based on registry value, loop, and play
     this.music = this.sound.add(`${load}Music`);
@@ -77,7 +80,7 @@ export default class Level extends Phaser.Scene {
     this.physics.add.collider(this.player, this.enemies, this.playerEnemy);
     this.physics.add.collider(this.player, this.wises, this.wiseText);
     this.physics.add.collider(this.enemies, this.layer);
-    this.physics.add.collider(this.player, this.wise);
+    this.physics.add.collider(this.player, this.wise,this.wiseText);
     this.physics.add.collider(this.enemies, this.enemies);
     this.physics.add.collider(this.playerAttack, this.layer, this.fireballWall);  //collide callback for fireball hitting wall
     this.physics.add.collider(this.enemyAttack, this.layer, this.fireballWall);  //collide callback for fireball hitting wall
@@ -269,7 +272,7 @@ export default class Level extends Phaser.Scene {
         if (object.type === 'wise') {
           //check the registry to see if the coin has already been picked. If not create the coin in the level and register it with the game
           regName = `${level}_wise_${wiseNum}`;
-          if (this.registry.get(regName) !== 'picked') {
+         
             let wise = new Wise({
               scene: this,
               x: object.x + 8, 
@@ -278,7 +281,7 @@ export default class Level extends Phaser.Scene {
             });
             this.wises.add(wise);
             this.registry.set(regName, 'active');
-          }
+          
         }
       });
 }
@@ -288,14 +291,11 @@ playerEnemy(player, enemy){
     player.damage(enemy.attack);
   }
 }
-playerWise(player, wise){
-  if (wise.alive){
-    player.damage(enemy.attack);
-  }
-}
+
 
 fireballWall(fireball, wall)
 {
+ 
   if (fireball.active) {
     fireball.wallCollide();
   }
@@ -312,7 +312,7 @@ fireballPlayer(player, fireball)
 {
   if (fireball.active) {
     fireball.playerCollide(player);
-  }
+}
 }
 
 fireballFireball(fireball1, fireball2)
@@ -323,10 +323,30 @@ fireballFireball(fireball1, fireball2)
   }
 }
 
-wiseText(wise, player)
+wiseText(player, wise)
 {
-console.log('Estoy akiiiii,dime el acertijo!!')
-}
+  if(wise.textbox=== false){
+    if(levels==="Level1"){
+      console.log(wise.text = "Bienvenid@ Amiguit@!!Si aciertas los acertijos del juego premio llevaras. Ahi val el primero:Oro parece,plata no es, que es:");
+      console.log(wise.text1 = "Plátano");
+      console.log(wise.text2 = "Monedas");
+      wise.op1==true;
+    }
+    // }else if(mylevel==="Level2"){
+    //   console.log(wise.text = "Ten cuidado con los enemigos del nivel 2 son más fuertes d elo que te esperas");
+    // }else if(mylevel==="Level3"){
+    //   console.log(wise.text = "Estamos en el nivel 3 enhorabuena! ");
+    // }else if(mylevel==="Level4"){
+    //   console.log(wise.text = "YEah !! hemos llegado al nivel 4!!");
+    // }else if(mylevel==="Level5"){
+    //   console.log(wise.text = "NIvel 5 el más complicado de todos, suerte!");
+    // }
+    }
+    wise.wiseText();
+    wise.textbox=true;   
+  }
+
+
 
 newGame() 
 {

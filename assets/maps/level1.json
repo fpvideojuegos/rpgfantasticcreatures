@@ -340,8 +340,32 @@
                  "type":"wise",
                  "visible":true,
                  "width":16,
-                 "x":255,
-                 "y":97
+                 "x":328,
+                 "y":142
+                }, 
+                {
+                 "gid":10,
+                 "height":16,
+                 "id":35,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":1002,
+                 "y":494
+                }, 
+                {
+                 "gid":10,
+                 "height":16,
+                 "id":43,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":901,
+                 "y":231
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -350,7 +374,7 @@
          "y":0
         }],
  "nextlayerid":3,
- "nextobjectid":36,
+ "nextobjectid":45,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -479,7 +503,14 @@
                  "id":9,
                  "image":"..\/..\/design\/sprites\/wise.png",
                  "imageheight":16,
-                 "imagewidth":16
+                 "imagewidth":16,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "type":"wise"
                 }],
          "tilewidth":16
         }, 
@@ -531,6 +562,12 @@
                  "image":"..\/..\/design\/sprites\/potion.png",
                  "imageheight":16,
                  "imagewidth":16,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }],
                  "type":"potion"
                 }, 
                 {
@@ -565,7 +602,8 @@
                  "id":9,
                  "image":"..\/..\/design\/sprites\/wise.png",
                  "imageheight":16,
-                 "imagewidth":16
+                 "imagewidth":16,
+                 "type":"wise"
                 }],
          "tilewidth":16
         }, 
