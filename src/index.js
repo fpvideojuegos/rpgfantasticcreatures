@@ -1,9 +1,11 @@
 import Preload from './scenes/Preload.js';
 import Level from './scenes/Level.js';
+import Credits from './scenes/Credits.js';
+import Score from './scenes/Score.js';
+import Menu from './scenes/Menu.js';
+import phaser_addons from './scenes/phaser_addon.js';
 import HUD from './scenes/HUD.js';
 import GameOver from './scenes/gameOver.js';
-
-document.body.style.cursor = 'none';    //remove cursor so we can replace it with our crosshair
 
 const config = {
     type: Phaser.AUTO,
@@ -21,6 +23,9 @@ const config = {
     },
     scene: [
     Preload,
+    Menu,
+    Score,
+    Credits,
     Level,
     HUD,
     GameOver
