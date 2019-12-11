@@ -16,7 +16,8 @@ export default class Wise extends Phaser.GameObjects.Sprite {
     this.detectionDistance = 64;
     this.canDecide = true;    
     this.scene.add.existing(this);
-    console.log(this.op1);
+    
+    
 
   }  
   wiseText() {    // console.log(this.textBox);  
@@ -131,35 +132,28 @@ export default class Wise extends Phaser.GameObjects.Sprite {
           useAdvancedWrap: false
     },
     });
-    
     //const closeboton = this.scene.add.image(this.x, this.y - 40, 'atlas', 'exclamation');    
     
-    text1.setInteractive().on('pointerdown', function () {
-        console.log("ha dicho que e verda");
-        console.log(scene.op1);
-        console.log("Aki he llegado");
-
-      let coins = this.scene.registry.get('coins_current');
-      this.scene.registry.set('coins_current', coins + 1);
-      this.scene.registry.set(`${this.scene.registry.get('load')}_Coins_${this.number}`, 'picked'); //register this object as collected with game so it is not added to future intances of this level
-      this.scene.events.emit('coinChange');
-      //console.log(coins);
-
+    text1.setInteractive().on('pointerdown', () => {
+      if(this.op1 == true){
+      let magic = this.scene.registry.get('magic_current');
+      this.scene.registry.set('magic_current', magic + 1);
+      this.scene.events.emit('magicChange'); //tell the scene the magic has changed so the HUD is updated
+      }
       text.visible = false;
       text1.visible = false;
-      text2.visible = false;
-       
-          }); 
-       
+      text2.visible = false;     
+          });  
     text2.setInteractive().on('pointerdown', () => {
-        let coins = this.scene.registry.get('coins_current');
-        this.scene.registry.set('coins_current', coins - 1);
-        this.scene.registry.set(`${this.scene.registry.get('load')}_Coins_${this.number}`, 'picked'); //register this object as collected with game so it is not added to future intances of this level
-        this.scene.events.emit('coinChange');
+      if(this.op2 == true){
+      let magic = this.scene.registry.get('magic_current');
+      this.scene.registry.set('magic_current', magic + 1);
+      this.scene.events.emit('magicChange');
+    }
         text.visible = false;
         text2.visible = false; 
         text1.visible = false;                 
           });  
-   
-        }
+    }
+
   } 
