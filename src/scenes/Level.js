@@ -73,7 +73,7 @@ export default class Level extends Phaser.Scene {
       classType: Fireball,
       maxSize: 100,
       runChildUpdate: true 
-    }); //create attack group to hold player's fireballs
+    }); //create attack group to hold player's fireball
 
     //tell the physics system to collide player, appropriate tiles, and other objects based on group, run callbacks when appropriate
     this.physics.add.collider(this.player, this.layer);
@@ -325,12 +325,15 @@ fireballFireball(fireball1, fireball2)
 
 wiseText(player, wise)
 {
+  
   if(wise.textbox=== false){
+    document.body.style.cursor = 'pointer'; 
     if(levels==="Level1"){
       console.log(wise.text = "Bienvenid@ Amiguit@!!Si aciertas los acertijos del juego premio llevaras. Ahi val el primero:Oro parece,plata no es, que es:");
       console.log(wise.text1 = "Plátano");
       console.log(wise.text2 = "Monedas");
-      wise.op1==true;
+      //wise.op1=true;
+      console.log(wise.op1);
     }
     // }else if(mylevel==="Level2"){
     //   console.log(wise.text = "Ten cuidado con los enemigos del nivel 2 son más fuertes d elo que te esperas");
@@ -343,7 +346,9 @@ wiseText(player, wise)
     // }
     }
     wise.wiseText();
-    wise.textbox=true;   
+    wise.textbox=true; 
+    wise.op1=false; 
+    document.body.style.cursor = 'none';  
   }
 
 
