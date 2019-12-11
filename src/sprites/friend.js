@@ -5,23 +5,16 @@ export default class Friend extends Phaser.GameObjects.Sprite {
 
     this.scene = config.scene;
     this.number = config.number;
-    // this.body.setDrag(250, 250);
     this.body.moves = false;
     this.textbox = false;
     this.text =  config.text;
-
     this.playerDetected = false;
     this.detectionDistance = 64;
     this.canDecide = true;
-
     this.scene.add.existing(this)
   }
 
-
   friendTex() {
-
-    // console.log('hola');
-
     var text = this.scene.add.text(this.x -55, this.y - 80, this.text, {
       fontFamily: 'Courier',
       fontSize: '11px',
@@ -38,7 +31,7 @@ export default class Friend extends Phaser.GameObjects.Sprite {
           stroke: false,
           fill: false
       },
-      align: 'center',  // 'left'|'center'|'right'|'justify'
+      align: 'center',  
       padding: {
           left: 2,
           right: 2,

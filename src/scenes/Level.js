@@ -346,7 +346,6 @@ fireballFireball(fireball1, fireball2)
 // TEXT FRIEND
 friendTex(player, friend){
   if (friend.textbox===false){
-  
     if(mylevel==="Level1"){
       console.log(friend.text = "Este nivel 1 esta lleno de maravillas increibles que seguro disfrutaras");
     }else if(mylevel==="Level2"){
@@ -354,11 +353,10 @@ friendTex(player, friend){
     }else if(mylevel==="Level3"){
       console.log(friend.text = "Estamos en el nivel 3 enhorabuena! ");
     }else if(mylevel==="Level4"){
-      console.log(friend.text = "YEah !! hemos llegado al nivel 4!!");
+      console.log(friend.text = "Yeah !! hemos llegado al nivel 4!!");
     }else if(mylevel==="Level5"){
-      console.log(friend.text = "NIvel 5 el más complicado de todos, suerte!");
+      console.log(friend.text = "Nivel 5 el más complicado de todos, suerte!");
     }
-
     friend.friendTex();
     friend.textbox=true;
   }
