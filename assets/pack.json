@@ -15,6 +15,13 @@
             }
             ,
             {
+                "type": "atlas",
+                "key": "settings",
+                "textureURL": "assets/settings.png",
+                "atlasURL": "assets/settings.json"
+            }
+            ,
+            {
                 "type": "xml",
                 "key": "minecraftXML",
                 "url": "assets/minecraft.fnt"

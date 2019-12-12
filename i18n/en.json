@@ -1,0 +1,43 @@
+{
+    "MENU": {
+        "SETTINGS": "SETTINGS",
+        "PLAY": "PLAY",
+        "INTRO": "INTRO",
+        "SCORES": "SCORES",
+        "CREDITS": "CREDITS"
+    },
+    "LEVELSELECT":{
+        "MENU": "MENU",
+        "LEVELS": "LEVELS",
+        "LEVEL": "LEVEL",   
+        "LEVELDONE": "Level completed",
+        "LEVELFINISHED": "Level completed with all candies!",
+        "LEVELNOTDONE": "Level not completed yet."     
+    },
+    "SETTINGLEVEL": {
+        "SOUND": "SOUND",
+        "LANGUAGE": "CHANGE LANGUAGE",
+        "RESET" : "RESET GAME",
+        "DONE" : "DONE"
+    },
+
+    "LEVEL1": {
+        "TALKFRIEND1": "This level 1 is full of incredible wonders that you will surely enjoy."
+    },
+
+    "LEVEL2": {
+        "TALKFRIEND2": "Be careful with the enemies of level 2, they are stronger than you expect."
+    },
+
+    "LEVEL3": {
+        "TALKFRIEND3": "You are at level 3. Congratulations!"
+    },
+
+    "LEVEL4": {
+        "TALKFRIEND4": "Yeah!! Now you are at level 4!!"
+    },
+
+    "LEVEN5": {
+        "TALKFRIEND5": "Level 5, the most difficult level. Good Luck!"
+    }
+}
