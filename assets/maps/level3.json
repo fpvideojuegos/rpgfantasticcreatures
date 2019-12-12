@@ -64,8 +64,8 @@
                  "type":"enemy",
                  "visible":true,
                  "width":16,
-                 "x":431,
-                 "y":580
+                 "x":560,
+                 "y":560
                 }, 
                 {
                  "gid":2,
@@ -265,11 +265,11 @@
                  "id":28,
                  "name":"",
                  "rotation":0,
-                 "type":"wise",
+                 "type":"slime",
                  "visible":true,
                  "width":16,
-                 "x":653,
-                 "y":575
+                 "x":704,
+                 "y":80
                 }, 
                 {
                  "gid":12,

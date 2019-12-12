@@ -13,7 +13,6 @@ export default class Score extends Phaser.Scene {
     create(){
     // add logo
         this.cameras.main.setBackgroundColor(0xf6b349);
-<<<<<<< HEAD
         var buttonStart = this.add.sprite(50, 50,'sprites','atras').setInteractive()
         .on('pointerdown', () => this.clickMenu() );
 
@@ -70,10 +69,6 @@ export default class Score extends Phaser.Scene {
               useAdvancedWrap: false
           },
         });
-=======
-        var buttonStart = this.add.sprite(580, 50,'sprites','play').setInteractive()
-        .on('pointerdown', () => this.clickMenu() );
->>>>>>> Rosa
     }
 	
 	clickMenu(){

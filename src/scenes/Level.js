@@ -9,12 +9,7 @@ import Meat from '../sprites/meat.js';
 import Potion from '../sprites/potion.js';
 import Jug from '../sprites/jug.js';
 import Heart from '../sprites/heart.js';
-<<<<<<< HEAD
 // add friend
-=======
-import Wise from '../sprites/wise.js';
-let levels;
->>>>>>> Rosa
 import Friend from '../sprites/friend.js';
 let mylevel;
 
@@ -34,11 +29,6 @@ export default class Level extends Phaser.Scene {
     this.cameras.main.setBackgroundColor(0x2a0503); 
     //point the variable at the registry which is assigned either at the Preload scene or just prior to level restart
     let load = this.registry.get('load');
-<<<<<<< HEAD
-=======
-    levels= load;
-    console.log(load);
->>>>>>> Rosa
     console.log( " es este mi nivel???"+load);
     mylevel=load;
     //load music based on registry value, loop, and play
@@ -66,10 +56,6 @@ export default class Level extends Phaser.Scene {
      runChildUpdate: true 
    });
 
-<<<<<<< HEAD
-=======
-   this.wises = this.add.group();
->>>>>>> Rosa
 
    this.friends = this.add.group();
    
@@ -113,20 +99,14 @@ export default class Level extends Phaser.Scene {
     this.physics.add.collider(this.player, this.layer);
     this.physics.add.collider(this.player, this.friends, this.friendTex);
     this.physics.add.collider(this.player, this.enemies, this.playerEnemy);
-<<<<<<< HEAD
-=======
-    this.physics.add.collider(this.player, this.wises, this.wiseText);
->>>>>>> Rosa
     this.physics.add.collider(this.player, this.friends);
     this.physics.add.collider(this.enemies, this.layer);
-    this.physics.add.collider(this.player, this.wise,this.wiseText);
     this.physics.add.collider(this.enemies, this.enemies);
     this.physics.add.collider(this.playerAttack, this.layer, this.fireballWall);  //collide callback for fireball hitting wall
     this.physics.add.collider(this.enemyAttack, this.layer, this.fireballWall);  //collide callback for fireball hitting wall
     this.physics.add.collider(this.playerAttack, this.enemies, this.fireballEnemy); //collide callback for fireball hitting enemy
     this.physics.add.collider(this.playerAttack, this.enemyAttack, this.fireballFireball); //collide callback for fireball hitting darkFireball
     this.physics.add.collider(this.player, this.enemyAttack, this.fireballPlayer); //collide callback for fireball hitting player
-    
 
     if (this.registry.get('newGame') === true) {
       this.newGame();
@@ -177,10 +157,6 @@ export default class Level extends Phaser.Scene {
     let enemyNum = 1; //initialize our enemy numbering used to check if the enemy has been killed
     let demonNum = 1; //initialize our demon numbering used to check if the demon has been killed
     let slimeNum = 1; //initialize our slime numbering used to check if the slime has been killed
-<<<<<<< HEAD
-=======
-    let wiseNum = 1;
->>>>>>> Rosa
     let FriendNum = 1;  //initialize our friend numbering used to check if the fiend has been touch
 
     let regName
@@ -313,23 +289,6 @@ export default class Level extends Phaser.Scene {
           }
           slimeNum += 1;
         }
-<<<<<<< HEAD
-=======
-        if (object.type === 'wise') {
-          //check the registry to see if the coin has already been picked. If not create the coin in the level and register it with the game
-          regName = `${level}_wise_${wiseNum}`;
-         
-            let wise = new Wise({
-              scene: this,
-              x: object.x + 8, 
-              y: object.y - 8,
-              number: wiseNum
-            });
-            this.wises.add(wise);
-            this.registry.set(regName, 'active');
-          
-        }
->>>>>>> Rosa
         if (object.type === 'friend') {
           regName = `${level}_Friend_${FriendNum}`;
           
@@ -355,10 +314,8 @@ playerEnemy(player, enemy){
   }
 }
 
-
 fireballWall(fireball, wall)
 {
- 
   if (fireball.active) {
     fireball.wallCollide();
   }
@@ -375,7 +332,7 @@ fireballPlayer(player, fireball)
 {
   if (fireball.active) {
     fireball.playerCollide(player);
-}
+  }
 }
 
 fireballFireball(fireball1, fireball2)
@@ -386,48 +343,6 @@ fireballFireball(fireball1, fireball2)
   }
 }
 
-<<<<<<< HEAD
-=======
-
-wiseText(player, wise)
-{
-  if(wise.textbox=== false){
-    document.body.style.cursor = 'pointer';
-    if(levels==="Level1"){
-      console.log(wise.text = "Bienvenid@ Amiguit@!!Si aciertas los acertijos del juego premio llevaras. Ahi val el primero:En el cielo brinco y vuelo. Me encanta subir, flotar y lucir mi pelo.");
-      console.log(wise.text1 = "Nubes");
-      console.log(wise.text2 = "Cometa");
-      wise.op2=true;
-    }else if(levels==="Level2"){
-      console.log(wise.text = "Hola de nuevo!!Dime que soy..Oro parece,plata no es, que es:");
-      console.log(wise.text1 = "Plátano");
-      console.log(wise.text2 = "Monedas");
-      wise.op1=true;
-    }else if(levels==="Level3"){
-      console.log(wise.text = "Veo que vas muy bien!!Sabrás esta?...Te sirven para escribir, dibujar, señalar y sentir.");
-      console.log(wise.text1 = "Lápices");
-      console.log(wise.text2 = "Dedos");
-      wise.op2=true;
-   }else if(levels==="Level4"){
-      console.log(wise.text = "Que bien que te vuelvo a ver!!Adivina, adivina...Tengo agujas y no sé coser, tengo números y no sé leer.");
-      console.log(wise.text1 = "Reloj");
-      console.log(wise.text2 = "Libro");
-      wise.op1=true;
-    }else if(levels==="Level5"){
-      console.log(wise.text = "Que bien juegas!!Pero acertarás esta?Con techo de hierro, pared de cristal, las noches en vela me gusta pasar.");
-      console.log(wise.text1 = "Linterna");
-      console.log(wise.text2 = "Foco");
-      wise.op1=true;
-    }
-    wise.wiseText();
-    wise.textbox=true; 
-    
-  }
-  
-} 
-
-
->>>>>>> Rosa
 // TEXT FRIEND
 friendTex(player, friend){
   if (friend.textbox===false){

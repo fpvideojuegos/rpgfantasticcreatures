@@ -76,8 +76,8 @@
                  "type":"demon",
                  "visible":true,
                  "width":16,
-                 "x":332,
-                 "y":385
+                 "x":352,
+                 "y":352
                 }, 
                 {
                  "gid":10,
@@ -196,8 +196,8 @@
                  "type":"slime",
                  "visible":true,
                  "width":16,
-                 "x":320,
-                 "y":257
+                 "x":352,
+                 "y":208
                 }, 
                 {
                  "gid":18,
@@ -205,11 +205,11 @@
                  "id":40,
                  "name":"",
                  "rotation":0,
-                 "type":"wise",
+                 "type":"slime",
                  "visible":true,
                  "width":16,
-                 "x":449,
-                 "y":207
+                 "x":448,
+                 "y":176
                 }, 
                 {
                  "gid":18,

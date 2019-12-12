@@ -6,11 +6,8 @@ import Menu from './scenes/Menu.js';
 import phaser_addons from './scenes/phaser_addon.js';
 import HUD from './scenes/HUD.js';
 import GameOver from './scenes/gameOver.js';
-<<<<<<< HEAD
 import SettingsLevel from '../settings.js';
 import TG from '../TG.js';
-=======
->>>>>>> Rosa
 
 const config = {
     type: Phaser.AUTO,
@@ -47,10 +44,7 @@ const config = {
     Menu,
     Score,
     Credits,
-<<<<<<< HEAD
     SettingsLevel,
-=======
->>>>>>> Rosa
     Level,
     HUD,
     GameOver
