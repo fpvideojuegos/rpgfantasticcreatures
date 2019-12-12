@@ -338,42 +338,6 @@
                  "y":304
                 }, 
                 {
-                 "gid":20,
-                 "height":16,
-                 "id":35,
-                 "name":"wise",
-                 "rotation":0,
-                 "type":"wise",
-                 "visible":true,
-                 "width":16,
-                 "x":328,
-                 "y":142
-                }, 
-                {
-                 "gid":10,
-                 "height":16,
-                 "id":35,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":1002,
-                 "y":494
-                }, 
-                {
-                 "gid":10,
-                 "height":16,
-                 "id":43,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":901,
-                 "y":231
-                },
-                {
                  "gid":1073741827,
                  "height":16,
                  "id":42,
@@ -549,18 +513,6 @@
                 }, 
                 {
                  "id":9,
-                 "image":"..\/..\/design\/sprites\/wise.png",
-                 "imageheight":16,
-                 "imagewidth":16,
-                 "properties":[
-                        {
-                         "name":"collide",
-                         "type":"bool",
-                         "value":true
-                        }],
-                 "type":"wise"
-                        },
-                     {
                  "image":"..\/..\/design\/sprites\/friend.png",
                  "imageheight":16,
                  "imagewidth":16,
@@ -580,7 +532,7 @@
          "margin":0,
          "name":"objects",
          "spacing":0,
-         "tilecount":10,
+         "tilecount":9,
          "tileheight":16,
          "tiles":[
                 {
@@ -616,12 +568,6 @@
                  "image":"..\/..\/design\/sprites\/potion.png",
                  "imageheight":16,
                  "imagewidth":16,
-                 "properties":[
-                        {
-                         "name":"collide",
-                         "type":"bool",
-                         "value":true
-                        }],
                  "type":"potion"
                 }, 
                 {
@@ -651,13 +597,6 @@
                  "imageheight":16,
                  "imagewidth":16,
                  "type":"heart"
-                }, 
-                {
-                 "id":9,
-                 "image":"..\/..\/design\/sprites\/wise.png",
-                 "imageheight":16,
-                 "imagewidth":16,
-                 "type":"wise"
                 }],
          "tilewidth":16
         }, 

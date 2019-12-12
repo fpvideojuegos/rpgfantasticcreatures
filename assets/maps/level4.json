@@ -157,11 +157,11 @@
                  "id":12,
                  "name":"",
                  "rotation":0,
-                 "type":"wise",
+                 "type":"slime",
                  "visible":true,
                  "width":16,
-                 "x":81,
-                 "y":48
+                 "x":448,
+                 "y":528
                 }, 
                 {
                  "gid":899,
@@ -208,8 +208,8 @@
                  "type":"slime",
                  "visible":true,
                  "width":16,
-                 "x":257,
-                 "y":102
+                 "x":212,
+                 "y":59
                 }, 
                 {
                  "gid":899,
@@ -304,8 +304,8 @@
                  "type":"slime",
                  "visible":true,
                  "width":16,
-                 "x":623,
-                 "y":318
+                 "x":620,
+                 "y":297
                 }, 
                 {
                  "gid":899,
@@ -316,8 +316,8 @@
                  "type":"slime",
                  "visible":true,
                  "width":16,
-                 "x":256,
-                 "y":304
+                 "x":624,
+                 "y":368
                 }, 
                 {
                  "gid":899,

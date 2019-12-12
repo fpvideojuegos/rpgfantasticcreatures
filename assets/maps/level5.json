@@ -28,8 +28,8 @@
                  "type":"enemy",
                  "visible":true,
                  "width":16,
-                 "x":448,
-                 "y":319
+                 "x":400,
+                 "y":352
                 }, 
                 {
                  "gid":337,
@@ -160,8 +160,8 @@
                  "type":"demon",
                  "visible":true,
                  "width":16,
-                 "x":175,
-                 "y":302
+                 "x":208,
+                 "y":304
                 }, 
                 {
                  "gid":347,
@@ -172,8 +172,8 @@
                  "type":"demon",
                  "visible":true,
                  "width":16,
-                 "x":176,
-                 "y":401
+                 "x":208,
+                 "y":400
                 }, 
                 {
                  "gid":347,
@@ -229,11 +229,11 @@
                  "id":22,
                  "name":"",
                  "rotation":0,
-                 "type":"wise",
+                 "type":"slime",
                  "visible":true,
                  "width":16,
-                 "x":321,
-                 "y":335
+                 "x":288,
+                 "y":192
                 }, 
                 {
                  "gid":343,
@@ -244,8 +244,8 @@
                  "type":"heart",
                  "visible":true,
                  "width":16,
-                 "x":143,
-                 "y":318
+                 "x":160,
+                 "y":320
                 }, 
                 {
                  "gid":343,
@@ -400,8 +400,8 @@
                  "type":"coins",
                  "visible":true,
                  "width":16,
-                 "x":177,
-                 "y":350
+                 "x":160,
+                 "y":352
                 }, 
                 {
                  "gid":342,
