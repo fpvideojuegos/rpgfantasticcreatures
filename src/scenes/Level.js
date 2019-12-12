@@ -9,9 +9,11 @@ import Meat from '../sprites/meat.js';
 import Potion from '../sprites/potion.js';
 import Jug from '../sprites/jug.js';
 import Heart from '../sprites/heart.js';
+import Monster from '../sprites/Monster.js';
 // add friend
 import Friend from '../sprites/friend.js';
 let mylevel;
+
 
 export default class Level extends Phaser.Scene {
   constructor() 
@@ -157,9 +159,11 @@ export default class Level extends Phaser.Scene {
     let enemyNum = 1; //initialize our enemy numbering used to check if the enemy has been killed
     let demonNum = 1; //initialize our demon numbering used to check if the demon has been killed
     let slimeNum = 1; //initialize our slime numbering used to check if the slime has been killed
+    let monsterNum = 1; // TEST MONSTER
     let FriendNum = 1;  //initialize our friend numbering used to check if the fiend has been touch
 
     let regName
+
     objects.objects.forEach(
       (object) => {
         //create a series of points in our spawnpoints array
@@ -259,6 +263,26 @@ export default class Level extends Phaser.Scene {
           }
           enemyNum += 1;
         }
+
+        
+        // TEST MONSTER OBJECT
+        if (object.type === "monster") {
+          //check the registry to see if the enemy has already been killed. If not create the MONSTER in the level and register it with the game
+          regName = `${level}_Monster_${monsterNum}`;
+          if (this.registry.get(regName) !== 'dead') {
+            let monster = new Monster({
+              scene: this,
+              x: object.x + 8, 
+              y: object.y - 8,
+              number: monsterNum
+            });
+            this.enemies.add(monster);
+            this.registry.set(regName, 'active');
+          }
+          monsterNum += 1;
+        }
+
+
         if (object.type === "demon") {
           //check the registry to see if the demon has already been killed. If not create the demon in the level and register it with the game
           regName = `${level}_Demon_${demonNum}`;
@@ -314,12 +338,30 @@ playerEnemy(player, enemy){
   }
 }
 
+/* TEST MONSTER ATTACK AND DAMAGE  - david 1
+playerMonster(player, monster){
+  if (monster.alive){
+    player.damage(monster.attack);
+  }
+}*/
+
+
 fireballWall(fireball, wall)
 {
   if (fireball.active) {
     fireball.wallCollide();
   }
 }
+
+
+/* TEST FIREBALL MONSTER - david 1
+fireballMonster(fireball, monster)
+{
+  if (fireball.active){
+    fireball.monsterCollide(monster);
+  }
+}*/
+
 
 fireballEnemy(fireball, enemy)
 {
