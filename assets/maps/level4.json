@@ -438,6 +438,18 @@
                  "width":16,
                  "x":337,
                  "y":134
+                }, 
+                {
+                 "gid":900,
+                 "height":21,
+                 "id":37,
+                 "name":"",
+                 "rotation":0,
+                 "type":"monster",
+                 "visible":true,
+                 "width":12,
+                 "x":362,
+                 "y":475
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -446,7 +458,7 @@
          "y":0
         }],
  "nextlayerid":3,
- "nextobjectid":37,
+ "nextobjectid":38,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -490,7 +502,7 @@
          "value":"spawnDown"
         }],
  "renderorder":"right-down",
- "tiledversion":"1.2.4",
+ "tiledversion":"1.2.5",
  "tileheight":16,
  "tilesets":[
         {
@@ -4609,8 +4621,8 @@
          "margin":0,
          "name":"objects",
          "spacing":0,
-         "tilecount":9,
-         "tileheight":16,
+         "tilecount":10,
+         "tileheight":21,
          "tiles":[
                 {
                  "id":0,
@@ -4674,6 +4686,13 @@
                  "imageheight":14,
                  "imagewidth":14,
                  "type":"slime"
+                }, 
+                {
+                 "id":9,
+                 "image":"..\/..\/design\/sprites\/monster.png",
+                 "imageheight":21,
+                 "imagewidth":12,
+                 "type":"monster"
                 }],
          "tilewidth":16
         }],

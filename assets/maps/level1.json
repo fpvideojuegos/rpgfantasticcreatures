@@ -40,20 +40,8 @@
                  "type":"enemy",
                  "visible":true,
                  "width":16,
-                 "x":204.5,
-                 "y":480.5
-                }, 
-                {
-                 "gid":1,
-                 "height":16,
-                 "id":3,
-                 "name":"",
-                 "rotation":0,
-                 "type":"enemy",
-                 "visible":true,
-                 "width":16,
-                 "x":358.5,
-                 "y":503
+                 "x":223.689980810019,
+                 "y":394.650085849914
                 }, 
                 {
                  "gid":2,
@@ -202,18 +190,6 @@
                 {
                  "gid":9,
                  "height":16,
-                 "id":23,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":293.5,
-                 "y":469
-                }, 
-                {
-                 "gid":9,
-                 "height":16,
                  "id":24,
                  "name":"",
                  "rotation":0,
@@ -222,18 +198,6 @@
                  "width":16,
                  "x":314,
                  "y":399.5
-                }, 
-                {
-                 "gid":9,
-                 "height":16,
-                 "id":25,
-                 "name":"",
-                 "rotation":0,
-                 "type":"slime",
-                 "visible":true,
-                 "width":16,
-                 "x":449.5,
-                 "y":350
                 }, 
                 {
                  "gid":3,
@@ -388,8 +352,44 @@
                  "type":"monster",
                  "visible":true,
                  "width":12,
-                 "x":333.359660640339,
-                 "y":531.159478840521
+                 "x":350.529643470356,
+                 "y":560.44944955055
+                }, 
+                {
+                 "gid":18,
+                 "height":16,
+                 "id":53,
+                 "name":"",
+                 "rotation":0,
+                 "type":"demon",
+                 "visible":true,
+                 "width":16,
+                 "x":602.03938996061,
+                 "y":238.27976972023
+                }, 
+                {
+                 "gid":16,
+                 "height":16,
+                 "id":54,
+                 "name":"",
+                 "rotation":0,
+                 "type":"potion",
+                 "visible":true,
+                 "width":16,
+                 "x":585.879406120594,
+                 "y":192.829815170185
+                }, 
+                {
+                 "gid":7,
+                 "height":16,
+                 "id":55,
+                 "name":"",
+                 "rotation":0,
+                 "type":"jug",
+                 "visible":true,
+                 "width":16,
+                 "x":578.809413190587,
+                 "y":241.309766690233
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -398,7 +398,7 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":52,
+ "nextobjectid":56,
  "orientation":"orthogonal",
  "properties":[
         {
