@@ -1,0 +1,43 @@
+{
+    "MENU": {
+        "SETTINGS": "AJUSTES",
+        "PLAY": "JUGAR",
+        "INTRO": "INTRO",
+        "SCORES": "PUNTOS",
+        "CREDITS": "CRÉDITOS"
+    },
+    "LEVELSELECT":{
+        "MENU": "MENÚ",
+        "LEVELS": "NIVELES",
+        "LEVEL": "NIVEL",
+        "LEVELDONE": "Nivel completado",
+        "LEVELFINISHED": "¡Nivel alcanzado con chuches completas!",
+        "LEVELNOTDONE": "Nivel no completado."      
+    },
+    "SETTINGLEVEL": {
+        "SOUND": "SONIDO",
+        "LANGUAGE": "CAMBIAR IDIOMA",
+        "RESET": "REINICIAR JUEGO",
+        "DONE": "HECHO"
+    },
+
+    "LEVEL1": {
+        "TALKFRIEND1": "Este nivel 1 está lleno de maravillas increíbles que seguro disfrutarás."
+    },
+
+    "LEVEL2": {
+        "TALKFRIEND2": "Ten cuidado con los enemigos del nivel 2, son más fuertes de lo que te esperas."
+    },
+
+    "LEVEL3": {
+        "TALKFRIEND3": "Estamos en el nivel 3. ¡Enhorabuena!"
+    },
+
+    "LEVEL4": {
+        "TALKFRIEND4": "Yeah!! ¡¡Hemos llegado al nivel 4!!"
+    },
+
+    "LEVEN5": {
+        "TALKFRIEND5": "Nivel 5, el más complicado de todos. ¡Suerte!"
+    }
+}

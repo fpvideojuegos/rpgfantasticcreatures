@@ -9,6 +9,8 @@ import Meat from '../sprites/meat.js';
 import Potion from '../sprites/potion.js';
 import Jug from '../sprites/jug.js';
 import Heart from '../sprites/heart.js';
+import Monster from '../sprites/Monster.js';
+
 
 export default class Level extends Phaser.Scene {
   constructor() 
@@ -18,13 +20,16 @@ export default class Level extends Phaser.Scene {
     });
   }
 
+  
+
   create() 
   {
+    document.body.style.cursor = 'none';    //remove cursor so we can replace it with our crosshair
     this.cameras.main.setBackgroundColor(0x2a0503); 
     //point the variable at the registry which is assigned either at the Preload scene or just prior to level restart
     let load = this.registry.get('load');
-    console.log(load);
- 
+    console.log( " es este mi nivel???"+load);
+    mylevel=load;
     //load music based on registry value, loop, and play
     this.music = this.sound.add(`${load}Music`);
     this.music.setLoop(true);
@@ -49,6 +54,16 @@ export default class Level extends Phaser.Scene {
      maxSize: 50,
      runChildUpdate: true 
    });
+
+
+   this.friends = this.add.group();
+   
+  //  this.enemyAttack = this.add.group({
+  //   classType: DarkFireball,
+  //   maxSize: 50,
+  //   runChildUpdate: true 
+  // });
+
     this.pickups = this.add.group();
     this.convertObjects();
 
@@ -61,6 +76,17 @@ export default class Level extends Phaser.Scene {
       x: spawn.x, 
       y: spawn.y,
     });
+
+    // //create friend istance
+    // this.friend= new Friend({
+    //   scene: this,
+    //    x: spawn.x+10, 
+    //    y: spawn.y -8,
+    //   // allowGravity = false;
+
+    // });
+
+    
     this.cameras.main.startFollow(this.player);
     this.playerAttack = this.add.group({
       classType: Fireball,
@@ -70,7 +96,9 @@ export default class Level extends Phaser.Scene {
 
     //tell the physics system to collide player, appropriate tiles, and other objects based on group, run callbacks when appropriate
     this.physics.add.collider(this.player, this.layer);
+    this.physics.add.collider(this.player, this.friends, this.friendTex);
     this.physics.add.collider(this.player, this.enemies, this.playerEnemy);
+    this.physics.add.collider(this.player, this.friends);
     this.physics.add.collider(this.enemies, this.layer);
     this.physics.add.collider(this.enemies, this.enemies);
     this.physics.add.collider(this.playerAttack, this.layer, this.fireballWall);  //collide callback for fireball hitting wall
@@ -128,7 +156,9 @@ export default class Level extends Phaser.Scene {
     let enemyNum = 1; //initialize our enemy numbering used to check if the enemy has been killed
     let demonNum = 1; //initialize our demon numbering used to check if the demon has been killed
     let slimeNum = 1; //initialize our slime numbering used to check if the slime has been killed
+    let monsterNum = 1; // TEST MONSTER
     let regName
+
     objects.objects.forEach(
       (object) => {
         //create a series of points in our spawnpoints array
@@ -228,6 +258,26 @@ export default class Level extends Phaser.Scene {
           }
           enemyNum += 1;
         }
+
+        
+        // TEST MONSTER OBJECT
+        if (object.type === "monster") {
+          //check the registry to see if the enemy has already been killed. If not create the MONSTER in the level and register it with the game
+          regName = `${level}_Monster_${monsterNum}`;
+          if (this.registry.get(regName) !== 'dead') {
+            let monster = new Monster({
+              scene: this,
+              x: object.x + 8, 
+              y: object.y - 8,
+              number: monsterNum
+            });
+            this.enemies.add(monster);
+            this.registry.set(regName, 'active');
+          }
+          monsterNum += 1;
+        }
+
+
         if (object.type === "demon") {
           //check the registry to see if the demon has already been killed. If not create the demon in the level and register it with the game
           regName = `${level}_Demon_${demonNum}`;
@@ -258,6 +308,22 @@ export default class Level extends Phaser.Scene {
           }
           slimeNum += 1;
         }
+        if (object.type === 'friend') {
+          regName = `${level}_Friend_${FriendNum}`;
+          
+            let friend = new Friend({
+              scene: this,
+              text: "hoolaaaaaaa",
+              x: object.x + 8, 
+              y: object.y - 8,
+              number: potNum
+            });
+            this.friends.add(friend);
+            this.registry.set(regName, 'active');
+            
+          
+         }
+         FriendNum+= 1;
       });
 }
 
@@ -267,12 +333,30 @@ playerEnemy(player, enemy){
   }
 }
 
+/* TEST MONSTER ATTACK AND DAMAGE  - david 1
+playerMonster(player, monster){
+  if (monster.alive){
+    player.damage(monster.attack);
+  }
+}*/
+
+
 fireballWall(fireball, wall)
 {
   if (fireball.active) {
     fireball.wallCollide();
   }
 }
+
+
+/* TEST FIREBALL MONSTER - david 1
+fireballMonster(fireball, monster)
+{
+  if (fireball.active){
+    fireball.monsterCollide(monster);
+  }
+}*/
+
 
 fireballEnemy(fireball, enemy)
 {
@@ -295,6 +379,34 @@ fireballFireball(fireball1, fireball2)
     fireball2.fireballCollide();
   }
 }
+
+// TEXT FRIEND
+friendTex(player, friend){
+  if (friend.textbox===false){
+  
+    if(mylevel==="Level1"){
+      console.log(friend.text = "Este nivel 1 esta lleno de maravillas increibles que seguro disfrutaras");
+    }else if(mylevel==="Level2"){
+      console.log(friend.text = "Ten cuidado con los enemigos del nivel 2 son más fuertes de lo que te esperas");
+    }else if(mylevel==="Level3"){
+      console.log(friend.text = "Estamos en el nivel 3 enhorabuena! ");
+    }else if(mylevel==="Level4"){
+      console.log(friend.text = "YEah !! hemos llegado al nivel 4!!");
+    }else if(mylevel==="Level5"){
+      console.log(friend.text = "NIvel 5 el más complicado de todos, suerte!");
+    }
+
+    friend.friendTex();
+    friend.textbox=true;
+  }
+}
+
+
+// playerEnemy(player, enemy){
+//   if (enemy.alive){
+//     player.damage(enemy.attack);
+//   }
+// }
 
 newGame() 
 {
