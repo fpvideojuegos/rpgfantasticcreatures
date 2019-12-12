@@ -10,6 +10,9 @@ import Potion from '../sprites/potion.js';
 import Jug from '../sprites/jug.js';
 import Heart from '../sprites/heart.js';
 import Monster from '../sprites/Monster.js';
+// add friend
+import Friend from '../sprites/friend.js';
+let mylevel;
 
 
 export default class Level extends Phaser.Scene {
@@ -157,6 +160,8 @@ export default class Level extends Phaser.Scene {
     let demonNum = 1; //initialize our demon numbering used to check if the demon has been killed
     let slimeNum = 1; //initialize our slime numbering used to check if the slime has been killed
     let monsterNum = 1; // TEST MONSTER
+    let FriendNum = 1;  //initialize our friend numbering used to check if the fiend has been touch
+
     let regName
 
     objects.objects.forEach(
