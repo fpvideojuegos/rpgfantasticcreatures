@@ -19,8 +19,8 @@ export default class Menu extends Phaser.Scene {
       'credit', 'credit','credit');
       this.btnstart = this.addButton(310, 250, 'sprites', this.clickStart, this, 'play', 'play1','play2',
       'play', 'play1','play2');
-      this.btnsettings = this.addButton(500, 50, 'sprites', this.clickSetting, this, 'play', 'play1','play2',
-      'play', 'play1','play2');
+      this.btnsettings = this.addButton(580, 300, 'sprites', this.clickSetting, this, 'setting', 'setting','setting',
+      'setting', 'setting','setting');
   }
 
 clickStart(){
