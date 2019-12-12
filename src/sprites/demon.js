@@ -15,8 +15,9 @@ export default class Demon extends Enemy {
 		this.exclaimSound.setVolume(.2);
 		this.deathSound = this.scene.sound.add('demonDeathSFX');
 		this.deathSound.setVolume(.4);
-		this.detectionDistance = 128;
+		this.detectionDistance = 100;
 		this.canFireball = true;
+		this.run = 27;
 	}
 
 	detectBehavior()

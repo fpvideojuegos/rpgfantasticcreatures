@@ -159,7 +159,7 @@ export default class Level extends Phaser.Scene {
     let enemyNum = 1; //initialize our enemy numbering used to check if the enemy has been killed
     let demonNum = 1; //initialize our demon numbering used to check if the demon has been killed
     let slimeNum = 1; //initialize our slime numbering used to check if the slime has been killed
-    let monsterNum = 1; // TEST MONSTER
+    let monsterNum = 1; // TEST MONSTER david 1
     let FriendNum = 1;  //initialize our friend numbering used to check if the fiend has been touch
 
     let regName
@@ -278,8 +278,60 @@ export default class Level extends Phaser.Scene {
             });
             this.enemies.add(monster);
             this.registry.set(regName, 'active');
+
+            // "test" modify characteristics in each level - david 1
+            switch (mylevel) {
+
+              case "Level1":
+
+                monster.speedShoot = 1800;
+                monster.run = 40;
+                //monster.setScale(3,3);
+                break;
+              
+              case "Level2":
+
+                monster.speedShoot = 1500;
+                monster.run = 44;
+                monster.detectionDistance = 132;
+                monster.health = 10;
+                
+                break;
+              
+              case "Level3":
+
+                monster.speedShoot = 1300;
+                monster.run = 48;
+                monster.detectionDistance = 136;
+                monster.health = 12;
+
+                break;
+
+              case "Level4":
+
+                monster.speedShoot = 1000;
+                monster.run = 52;
+                monster.detectionDistance = 140;
+                monster.health = 14;
+
+                break;
+
+              case "Level5":
+
+                monster.speedShoot = 700;
+                monster.run = 56;
+                monster.detectionDistance = 144;
+                monster.health = 16;
+
+                break;
+            
+              default:
+                break;
+            }
+
           }
           monsterNum += 1;
+
         }
 
 
@@ -338,30 +390,12 @@ playerEnemy(player, enemy){
   }
 }
 
-/* TEST MONSTER ATTACK AND DAMAGE  - david 1
-playerMonster(player, monster){
-  if (monster.alive){
-    player.damage(monster.attack);
-  }
-}*/
-
-
 fireballWall(fireball, wall)
 {
   if (fireball.active) {
     fireball.wallCollide();
   }
 }
-
-
-/* TEST FIREBALL MONSTER - david 1
-fireballMonster(fireball, monster)
-{
-  if (fireball.active){
-    fireball.monsterCollide(monster);
-  }
-}*/
-
 
 fireballEnemy(fireball, enemy)
 {
@@ -531,5 +565,8 @@ end(type)
       this.time.addEvent({ delay: 1000, callback: () => {this.scene.start('GameOver', 'win');}, callbackScope: this });
     }
   }
+
+
+  
 
 }
