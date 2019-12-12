@@ -17,10 +17,12 @@ export default class Fireball extends Phaser.GameObjects.Sprite {
     this.emitter.setPosition(this.x, this.y);
     this.emitter.setSpeed(16);
     this.emitter.setBlendMode(Phaser.BlendModes.ADD);
+    
   }
 
   fire (x, y)
   {
+
     this.setPosition(x, y);
     this.scene.physics.moveTo(this, this.scene.crosshair.x, this.scene.crosshair.y);
     this.emitter.flow(0)

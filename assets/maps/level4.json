@@ -157,11 +157,11 @@
                  "id":12,
                  "name":"",
                  "rotation":0,
-                 "type":"slime",
+                 "type":"wise",
                  "visible":true,
                  "width":16,
-                 "x":448,
-                 "y":528
+                 "x":81,
+                 "y":48
                 }, 
                 {
                  "gid":899,
@@ -208,8 +208,13 @@
                  "type":"slime",
                  "visible":true,
                  "width":16,
+<<<<<<< HEAD
                  "x":212,
                  "y":59
+=======
+                 "x":257,
+                 "y":102
+>>>>>>> Rosa
                 }, 
                 {
                  "gid":899,
@@ -304,8 +309,13 @@
                  "type":"slime",
                  "visible":true,
                  "width":16,
+<<<<<<< HEAD
                  "x":620,
                  "y":297
+=======
+                 "x":623,
+                 "y":318
+>>>>>>> Rosa
                 }, 
                 {
                  "gid":899,
@@ -316,8 +326,8 @@
                  "type":"slime",
                  "visible":true,
                  "width":16,
-                 "x":624,
-                 "y":368
+                 "x":256,
+                 "y":304
                 }, 
                 {
                  "gid":899,

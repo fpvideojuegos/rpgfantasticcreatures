@@ -15,6 +15,7 @@
             }
             ,
             {
+<<<<<<< HEAD
                 "type": "atlas",
                 "key": "settings",
                 "textureURL": "assets/settings.png",
@@ -22,6 +23,8 @@
             }
             ,
             {
+=======
+>>>>>>> Rosa
                 "type": "xml",
                 "key": "minecraftXML",
                 "url": "assets/minecraft.fnt"
