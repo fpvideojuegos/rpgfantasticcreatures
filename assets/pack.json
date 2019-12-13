@@ -8,6 +8,20 @@
                 "atlasURL": "assets/atlas.json"
             },
             {
+                "type": "atlas",
+                "key": "sprites",
+                "textureURL": "assets/sprites.png",
+                "atlasURL": "assets/sprites.json"
+            }
+            ,
+            {
+                "type": "atlas",
+                "key": "settings",
+                "textureURL": "assets/settings.png",
+                "atlasURL": "assets/settings.json"
+            }
+            ,
+            {
                 "type": "xml",
                 "key": "minecraftXML",
                 "url": "assets/minecraft.fnt"
